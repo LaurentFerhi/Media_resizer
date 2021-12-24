@@ -43,7 +43,6 @@ def resize_video(ratio):
 	# for all files in directory with video extension
 	supported_files_vid = ['mp4','MP4','avi','AVI','mpeg','MPEG']
 	for name in [file for file in os.listdir() if file[-3:] in supported_files_vid]:
-		#os.system('ffmpeg -i '+str(name)+' -vf "scale=iw/2.5:ih/2.5" resized_videos\\resized_'+str(name))
 		os.system('ffmpeg -i {} -vf "scale=iw/{}:ih/{}" resized_videos\\resized_{}'.format(name,ratio,ratio,name))
 
 if __name__ == '__main__':
